@@ -1,0 +1,19 @@
+[package]
+name = "rust-lz4"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Pure-Rust LZ4 block compressor and decompressor with a high-compression mode and fixed-output compression. Implemented from the published block format; no C bindings, no unsafe, no dependencies."
+repository = "https://github.com/antimatter-studios/rust-lz4"
+keywords = ["lz4", "lz4hc", "compression", "decompression", "erofs"]
+categories = ["compression", "filesystem"]
+readme = "README.md"
+
+[lib]
+name = "lz4"
+
+[dev-dependencies]
+# Independent readers and a reference ratio for the tests only: nothing here
+# reaches a consumer of this crate.
+lz4_flex = { version = "0.11", default-features = false, features = ["safe-decode", "std"] }
+lz4-sys = "1.11"
